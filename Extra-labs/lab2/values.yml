@@ -1,0 +1,25 @@
+# kube-prometheus-stack Helm values for Minikube Lab
+# These settings expose Grafana and Prometheus via NodePort
+# for easy access during the lab
+
+grafana:
+  service:
+    type: NodePort
+    nodePort: 30080
+  adminPassword: "admin123"
+
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 30090
+  prometheusSpec:
+    retention: 7d
+
+alertmanager:
+  enabled: true
+
+nodeExporter:
+  enabled: true   # deploys on EACH node automatically
+
+kubeStateMetrics:
+  enabled: true   # exposes K8s object metrics (pods, deployments...)

@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+
+  # Prometheus monitors itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Minikube node metrics via Node Exporter
+  # Replace MINIKUBE_IP with output of: minikube ip
+  - job_name: 'minikube-node'
+    static_configs:
+      - targets: ['MINIKUBE_IP:9100']
+        labels:
+          instance: 'minikube'
+          env: 'local'
