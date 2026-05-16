@@ -9,7 +9,7 @@ scrape_configs:
 
   - job_name: 'ec2-node'
     static_configs:
-      - targets: ['3.84.41.168:80']   # ← replace with your EC2 Public IP
+      - targets: ['ec2-3-84-41-168.compute-1.amazonaws.com']   # ← replace with your EC2 Public IP
         labels:
           instance: 'my-ec2'
           env: 'lab'

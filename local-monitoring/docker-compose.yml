@@ -26,7 +26,7 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin123
       - GF_SMTP_ENABLED=true
-      - GF_SMTP_HOST=smtp.gmail.com:587
+      - GF_SMTP_HOST=smtp.gmail.com:465
       - GF_SMTP_USER=eng.hassanelhabbal@gmail.com
       - GF_SMTP_PASSWORD=dzox iibv ocfk usrc
       - GF_SMTP_FROM_ADDRESS=eng.hassanelhabbal@gmail.com
